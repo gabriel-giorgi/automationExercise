@@ -23,7 +23,8 @@ public class Drivers {
 
     public static WebDriver asLocalChrome(WebDriver driver) {
         System.setProperty(CHROME_DRIVER_EXE_PROPERTY, "C:\\WebDrivers\\chromedriver.exe");
-        return new ChromeDriver();
+        driver = new ChromeDriver();
+        return driver;
 
     }
 
