@@ -13,7 +13,7 @@ import static utils.LogHandler.initLogging;
 /*
  * Implementation of Logger on utils/LogHandler
  *
- *
+ * Landing Page
  */
 
 public class GeneralPage {
@@ -39,7 +39,7 @@ public class GeneralPage {
             driver.get(url);
         }
 
-        //Exercice 2
+        //Exercise 2
         public void fillFieldText(final By locator , final String someText){
             logger.info("Entering: '" + someText + "' to text field.");
             driver.findElement(locator).sendKeys(someText);

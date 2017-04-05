@@ -1,13 +1,10 @@
 import factories.DriverFactory;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.DemoQAPage;
 import pages.DemoQARegistrationPage;
 
-import java.util.List;
 
 import static utils.PropertiesHandler.getPropertyValue;
 import static utils.LogHandler.initLogging;
@@ -24,8 +21,8 @@ public class MainTest {
 
         //Locators of WebElements
         By FirstNameFieldLocator = By.id("name_3_firstname");
-        By LastNameFieldLocator = By.id("name_3_lastname");
-        By UserNameLocator = By.id("username");
+        By LastNameFieldLocator = By.xpath("html/body/div[1]/div/div[1]/main/article/div/div/div[3]/form/ul/li[1]/div[1]/div/input"); //absolute xpath
+        By UserNameLocator = By.xpath(".//*[@id='username']");  // relative xpath
         By EmailNameLocator = By.id("email_1");
 
         //Initialization of Logger
@@ -36,7 +33,7 @@ public class MainTest {
         String typeBrowser = getPropertyValue("browserType");
         logger.info("Initializing the browser");
 
-        //Invoke Factory to instance a new driver with the properties above
+        //Invoke Factory to instance a new driver with the properties above (Exercise 2)
         WebDriver driver = DriverFactory.getIntance().startBrowser(typeConnection, typeBrowser);
         logger.info("Maximizing the browser");
         driver.manage().window().maximize();

@@ -14,6 +14,7 @@ public class PropertiesHandler {
             "C:\\Users\\gabriel.giorgi\\Desktop\\ExerciseSelenium\\src\\main\\resources\\config.properties";
 
     public static String getPropertyValue(final String key) {
+            //Creating property
         Properties properties = new Properties();
 
         File file = new File(PROPERTY_PATH);

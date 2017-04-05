@@ -24,7 +24,7 @@ public class DriverFactory {
 
     }
 
-
+//Exercise 2
     public WebDriver startBrowser(String typeConnection, String typeBrowser) {
         /* Checking type connection for local ones */
         if (typeConnection.equals("local")) {
