@@ -9,11 +9,12 @@ import static utils.PropertiesHandler.getPropertyValue;
  */
 public class LogHandler {
 
+    private static String log4jConfigURL = LogHandler.class.getClassLoader().getResource("log4j.properties").getFile();
 
-// Static factory method for logger instance
+    // Static factory method for logger instance
     public static Logger initLogging () {
         Logger logger = Logger.getLogger("LogHandler");
-        PropertyConfigurator.configure(getPropertyValue("pathLog4jProperties"));
+        PropertyConfigurator.configure(log4jConfigURL);
         return logger;
     }
 }

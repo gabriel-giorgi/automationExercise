@@ -11,7 +11,7 @@ import java.util.Properties;
 public class PropertiesHandler {
 
     private static final String PROPERTY_PATH =
-            "C:\\Users\\gabriel.giorgi\\Desktop\\ExerciseSelenium\\src\\main\\resources\\config.properties";
+            PropertiesHandler.class.getClassLoader().getResource("config.properties").getFile();
 
     public static String getPropertyValue(final String key) {
             //Creating property

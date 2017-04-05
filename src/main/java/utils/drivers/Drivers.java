@@ -7,6 +7,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,9 +21,13 @@ import static utils.PropertiesHandler.getPropertyValue;
 /* Static factory methods for drivers creation */
 public class Drivers {
 
+    static String chromeURL = Drivers.class.getClassLoader().getResource("drivers/chromedriver.exe").getFile();
+    static String firefoxURL = Drivers.class.getClassLoader().getResource("drivers/geckodriver.exe").getFile();
+    static String IExploreURL = Drivers.class.getClassLoader().getResource("drivers/IEDriverServer.exe").getFile();
+
 
     public static WebDriver asLocalChrome(WebDriver driver) {
-        System.setProperty(CHROME_DRIVER_EXE_PROPERTY, "C:\\WebDrivers\\chromedriver.exe");
+        System.setProperty(CHROME_DRIVER_EXE_PROPERTY, chromeURL);
         driver = new ChromeDriver();
         return driver;
 
@@ -39,7 +44,7 @@ public class Drivers {
     }
 
     public static WebDriver asLocalFirefox(WebDriver driver) {
-        System.setProperty("webdriver.gecko.driver", "C:\\WebDrivers\\geckodriver64\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", firefoxURL);
         driver = new FirefoxDriver();
         return driver;
     }
@@ -56,7 +61,7 @@ public class Drivers {
     }
 
     public static WebDriver asLocalIExplore(WebDriver driver) {
-        System.setProperty("webdriver.ie.driver", "C:\\WebDrivers\\IEDriverServer.exe");
+        System.setProperty("webdriver.ie.driver", IExploreURL);
         driver = new InternetExplorerDriver();
         return driver;
     }
